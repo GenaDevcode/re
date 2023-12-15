@@ -338,16 +338,16 @@ body {
 }
 
 .header-logo-center .header-icon-1 {
-  left: 0px;
+  right: 0px;
 }
 .header-logo-center .header-icon-2 {
-  left: 45px;
-}
-.header-logo-center .header-icon-3 {
   right: 45px;
 }
+.header-logo-center .header-icon-3 {
+  left: 45px;
+}
 .header-logo-center .header-icon-4 {
-  right: 0px;
+  left: 0px;
 }
 .header-logo-center .header-title {
   width: 150px;
@@ -408,24 +408,24 @@ body {
 }
 
 .header-logo-app .header-icon-1 {
-  left: 3px;
+  right: 3px;
 }
 .header-logo-app .header-icon-2 {
-  right: 2px;
+  left: 2px;
 }
 .header-logo-app .header-icon-3 {
-  right: 45px;
+  left: 45px;
 }
 .header-logo-app .header-icon-4 {
-  right: 90px;
+  left: 90px;
 }
 .header-logo-app .header-logo {
-  left: 0px !important;
-  margin-left: 40px !important;
+  right: 0px !important;
+  margin-right: 40px !important;
 }
 .header-logo-app .header-title {
-  left: 0px !important;
-  margin-left: 55px !important;
+  right: 0px !important;
+  margin-right: 55px !important;
 }
 
 .footer-logo span {
@@ -441,12 +441,12 @@ body {
   overflow: hidden;
 }
 
-.header-search .search-box {
-  margin-top: calc(env(safe-area-inset-top) - 10px);
-}
-
 .header-search * {
   transition: transform 300ms ease;
+}
+
+.header-search .search-box {
+  margin-top: calc(env(safe-area-inset-top) - 10px);
 }
 
 .header-search-active .header-icon, .header-search-active .header-title {
@@ -484,6 +484,7 @@ body {
   height: calc(62px + env(safe-area-inset-bottom) * 1.1);
   display: flex;
   text-align: center;
+  transition: all 350ms ease;
 }
 #footer-bar a {
   color: #1f1f1f;
@@ -612,6 +613,7 @@ body {
 
 /*Sticky 4.1 Scrolling Footer Bar*/
 .footer-bar-scroll {
+  direction: rtl;
   display: block !important;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -628,12 +630,12 @@ body {
   margin-top: 1px;
 }
 .footer-bar-scroll.footer-bar-4 .badge {
-  margin-left: -8px !important;
+  margin-right: -8px !important;
   margin-top: 14px !important;
 }
 
 .footer-bar-scroll.footer-bar-3 .badge {
-  margin-left: -7px !important;
+  margin-right: -7px !important;
   margin-top: 0px !important;
 }
 .footer-bar-scroll.footer-bar-3 i {
@@ -652,11 +654,11 @@ body {
 .menu-title h1 {
   font-size: 23px;
   font-weight: 700;
-  padding: 20px 0px 3px 20px;
+  padding: 20px 20px 3px 0px;
 }
 .menu-title p {
   font-size: 11px;
-  margin: -15px 0px 10px 20px;
+  margin: -15px 20px 10px 0px;
   padding: 0px 0px 0px 0px;
 }
 .menu-title a {
@@ -666,7 +668,7 @@ body {
   text-align: center;
   width: 55px;
   line-height: 85px;
-  right: 0px;
+  left: 0px;
   top: 0px;
 }
 
@@ -897,7 +899,7 @@ body {
 
 .menu-box-left .ios-switch,
 .menu-box-left .android-switch {
-  transform: scale(0.7, 0.7) translateY(-6px) translateX(8px);
+  transform: scale(0.7, 0.7) translateY(-6px) translateX(-10px);
   margin-right: -35px;
 }
 
@@ -934,8 +936,8 @@ body {
 }
 
 .menu-sidebar .list-custom-small img {
-  margin-right: 3px;
-  transform: translateX(-2px);
+  margin-left: 3px;
+  transform: translateX(2px);
 }
 
 /*Sticky Utility / Secondary Classes*/
@@ -1365,7 +1367,7 @@ img.mx-auto {
   right: 0px;
   bottom: 0px;
   z-index: 99999;
-  transition: all 200ms ease;
+  transition: all 150ms ease;
 }
 #preloader .spinner-border {
   position: absolute;
@@ -1377,7 +1379,7 @@ img.mx-auto {
 .preloader-hide {
   opacity: 0;
   pointer-events: none;
-  transition: all 150ms ease !important;
+  transition: all 350ms ease !important;
 }
 
 .theme-light #preloader {
@@ -1514,14 +1516,14 @@ img.mx-auto {
 }
 
 .btn-icon {
-  padding-left: 50px !important;
+  padding-right: 50px !important;
   overflow: hidden;
   position: relative;
 }
 
 .btn-icon i {
   position: absolute;
-  left: 0px;
+  right: 0px;
   top: 0px;
   line-height: 43px;
   width: 40px;
@@ -1617,14 +1619,14 @@ button {
 }
 
 .btn.accordion-btn {
-  text-align: left !important;
+  text-align: right !important;
   padding: 15px 17px;
   font-size: 13px;
   font-weight: 700;
 }
 
 .accordion-icon {
-  float: right;
+  float: left;
   transition: all 250ms ease;
   margin-top: 5px;
 }
@@ -1698,7 +1700,7 @@ button {
 }
 .add-to-home h1 {
   position: absolute;
-  padding-left: 75px;
+  padding-right: 75px;
   padding-top: 8px;
   color: #FFF;
   font-size: 13px;
@@ -1707,15 +1709,15 @@ button {
   color: #ced4da;
   position: absolute;
   font-size: 11px;
-  padding-right: 20px;
-  padding-left: 75px;
+  padding-left: 20px;
+  padding-right: 75px;
   padding-top: 35px;
   line-height: 14px;
 }
 .add-to-home img {
   width: 45px;
   margin-top: 17px;
-  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .add-to-home-ios {
@@ -1728,14 +1730,14 @@ button {
   font-size: 30px;
   left: 50%;
   bottom: -18px !important;
-  margin-left: -21px;
+  margin-right: -21px;
   transform: rotate(180deg);
   color: #000;
   display: block;
 }
 .add-to-home-ios .close-add-to-home {
   position: absolute;
-  right: 13px;
+  left: 13px;
   top: 13px;
   transform: scale(0.5, 0.5);
 }
@@ -1748,15 +1750,15 @@ button {
   text-align: center;
   position: absolute;
   top: -18px;
-  right: 15px;
+  left: 15px;
   font-size: 30px;
-  margin-left: -20px;
+  margin-right: -20px;
   color: #000;
   display: block;
 }
 .add-to-home-android .close-add-to-home {
   position: absolute;
-  right: 5px;
+  left: 5px;
   top: 20px;
   transform: scale(0.5, 0.5);
 }
@@ -1786,7 +1788,7 @@ button {
 
 .ad-time-close {
   position: absolute;
-  right: 10px;
+  left: 10px;
   top: 10px;
   width: 30px;
   height: 30px;
@@ -1827,11 +1829,11 @@ button {
 .scroll-ad h1 {
   display: block;
   font-size: 18px;
-  padding: 7px 0px 0px 80px;
+  padding: 7px 80px 0px 0px;
   margin-bottom: -3px;
 }
 .scroll-ad em {
-  padding: 0px 85px 0px 80px;
+  padding: 0px 80px 0px 85px;
   font-style: normal;
   font-size: 11px;
   opacity: 0.7;
@@ -1841,7 +1843,7 @@ button {
 .scroll-ad a {
   width: 60px;
   font-size: 9px;
-  right: 15px;
+  left: 15px;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
@@ -1913,12 +1915,12 @@ button {
   background-color: #343a40;
 }
 .notification .notification-icon i:first-child {
-  margin: 0px 5px 0px 10px;
+  margin: 0px 10px 0px 5px;
   font-size: 10px;
 }
 .notification .notification-icon i:last-child {
   position: absolute;
-  right: 0px;
+  left: 0px;
   line-height: 30px;
   width: 40px;
   text-align: center;
@@ -1941,10 +1943,6 @@ button {
   transform: translateY(0%) !important;
 }
 
-.is-ios.is-on-homescreen .notification.show {
-  transform: translateY(30px) !important;
-}
-
 .notification-android {
   left: 5px;
   right: 5px;
@@ -1956,14 +1954,14 @@ button {
   top: 50%;
   transform: translateY(-55%);
   width: 35px;
-  margin-left: 15px;
+  margin-right: 15px;
   line-height: 35px;
   border-radius: 35px;
   text-align: center;
   font-size: 13px;
 }
 .notification-android h1 {
-  padding-left: 55px;
+  padding-right: 55px;
 }
 .notification-android p {
   padding-right: 60px;
@@ -1972,7 +1970,7 @@ button {
 }
 .notification-android strong {
   position: absolute;
-  right: 20px;
+  left: 20px;
   top: 20px;
   font-size: 10px;
   font-weight: 400;
@@ -1980,7 +1978,7 @@ button {
 }
 .notification-android .notification-buttons {
   width: 100%;
-  margin-left: 70px;
+  margin-right: 70px;
   padding-top: 5px;
   border-top: solid 1px rgba(255, 255, 255, 0.1);
 }
@@ -1988,8 +1986,8 @@ button {
   opacity: 0.6;
   font-size: 11px;
   position: relative;
-  float: left;
-  margin: 0px 10px 0px 0px;
+  float: right;
+  margin: 0px 0px 0px 10px;
   width: auto;
   transform: translateY(-22px);
 }
@@ -2022,12 +2020,12 @@ button {
   position: absolute;
   width: 50px;
   border-radius: 50px;
-  right: 20px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
 }
 .notification-material p {
-  padding-right: 50px;
+  padding-left: 50px;
 }
 
 /*Back to Top*/
@@ -2064,7 +2062,7 @@ button {
   transition: all 350ms ease;
 }
 .back-to-top-badge i {
-  padding: 0px 10px 0px 0px;
+  padding: 0px 0px 0px 10px;
 }
 
 .back-to-top-icon {
@@ -2292,7 +2290,7 @@ button {
     transform: translateX(0px);
   }
   50% {
-    transform: translateX(-1400px);
+    transform: translateX(1400px);
   }
   100% {
     transform: translateX(0px);
@@ -2440,9 +2438,9 @@ button {
 /*Chips*/
 .chip {
   display: inline-block;
-  margin: 0px 10px 15px 0px;
+  margin: 0px 0px 15px 10px;
   border-radius: 30px;
-  padding-right: 15px;
+  padding-left: 15px;
 }
 .chip * {
   font-size: 12px;
@@ -2456,11 +2454,11 @@ button {
   border-radius: 30px;
   display: inline-block;
   text-align: center;
-  margin-right: 5px;
+  margin-left: 5px;
 }
 .chip img {
   display: inline;
-  margin-right: 9px;
+  margin-left: 9px;
   border-radius: 30px;
   width: 31px;
   line-height: 31px;
@@ -2544,10 +2542,10 @@ button {
 
 /*iOS Switcher*/
 .ios-switch {
-  margin-right: -32px;
+  margin-left: -32px;
   margin-top: 12px !important;
   position: relative;
-  padding-left: 10px;
+  padding-right: 10px;
 }
 .ios-switch label::before {
   content: "";
@@ -2555,7 +2553,7 @@ button {
   background-color: #e8e9ea;
   pointer-events: all;
   margin-top: -5px;
-  margin-left: -1px;
+  margin-right: -1px;
   width: 58px !important;
   height: 32px !important;
   border-radius: 50px !important;
@@ -2579,7 +2577,7 @@ button {
 }
 
 .ios-input:checked ~ .custom-control-label::after {
-  -webkit-transform: translateX(26px) !important;
+  -webkit-transform: translateX(-26px) !important;
 }
 .ios-input:checked ~ .custom-control-label::before {
   background-color: #8CC152 !important;
@@ -2593,13 +2591,13 @@ button {
   pointer-events: none;
   z-index: 5;
   position: absolute;
-  left: 20px;
+  right: 20px;
   margin-top: -5px !important;
 }
 .ios-switch-icon i:last-child {
   z-index: 5;
   position: absolute;
-  margin-left: 26px;
+  margin-right: 26px;
 }
 .ios-switch-icon span {
   font-size: 9px;
@@ -2610,25 +2608,25 @@ button {
   z-index: 5;
   position: absolute;
   margin-top: -5px !important;
-  left: 19px;
+  right: 19px;
 }
 .ios-switch-icon span:last-child {
   z-index: 5;
   position: absolute;
-  margin-left: 24px;
+  margin-right: 24px;
 }
 
 /*Android Switcher*/
 .android-switch {
-  padding-left: 10px;
-  margin-right: -32px;
+  padding-right: 10px;
+  margin-left: -32px;
 }
 .android-switch label::before {
   display: block !important;
   content: "";
   pointer-events: all;
   margin-top: 5px;
-  margin-left: -2px;
+  margin-right: -2px;
   width: 53px !important;
   height: 17px !important;
   border-radius: 50px !important;
@@ -2640,7 +2638,7 @@ button {
   content: "";
   border: solid 1px rgba(0, 0, 0, 0.1) !important;
   margin-top: -22px;
-  margin-left: -3px;
+  margin-right: -3px;
   width: 28px !important;
   height: 28px !important;
   background-color: #FFF !important;
@@ -2658,7 +2656,7 @@ button {
 .android-input:checked ~ .custom-control-label::after {
   background-color: #458be3 !important;
   border: none !important;
-  -webkit-transform: translateX(30px) !important;
+  -webkit-transform: translateX(-30px) !important;
 }
 .android-input:checked ~ .custom-control-label::before {
   background-color: #458be3 !important;
@@ -2709,8 +2707,8 @@ button {
 
 /*---Checkboxes & Radios---*/
 .icon-check {
-  margin-left: -30px;
-  margin-right: 10px;
+  margin-right: -30px;
+  margin-left: 10px;
   cursor: pointer;
   position: relative;
   width: auto;
@@ -2735,7 +2733,7 @@ button {
   text-align: center;
   pointer-events: none;
   position: absolute;
-  left: 30px;
+  right: 30px;
   top: 1px;
   height: 24px;
   line-height: 24px;
@@ -2743,7 +2741,7 @@ button {
 .icon-check label {
   cursor: pointer;
   font-size: 13px;
-  padding: 0px 15px 0px 40px;
+  padding: 0px 60px 0px 15px;
 }
 .icon-check .icon-check-2 {
   display: none;
@@ -2761,8 +2759,8 @@ button {
   font-size: 14px;
 }
 .fac label {
-  margin: 0em 1em 0em 0em;
-  padding-left: 1.5em;
+  margin: 0em 0em 0em 1em;
+  padding-right: 1.5em;
   cursor: pointer;
   font-weight: inherit;
 }
@@ -2770,7 +2768,7 @@ button {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  left: 0;
+  right: 0;
   margin-top: 0.5px;
   transition: opacity 150ms ease-in-out;
 }
@@ -2781,7 +2779,7 @@ button {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  left: 0;
+  right: 0;
   margin-top: 0.5px;
 }
 .fac input {
@@ -2806,7 +2804,7 @@ button {
   content: "\f00c";
   color: #FFF !important;
   font-size: 10px !important;
-  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .fac-checkbox-round > input + label:before {
@@ -2819,7 +2817,7 @@ button {
   content: "\f00c";
   color: #FFF !important;
   font-size: 8px !important;
-  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .fac-radio > input + label:before {
@@ -2835,7 +2833,7 @@ button {
   content: "\f00c";
   color: #FFF !important;
   font-size: 10px !important;
-  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .fac-checkbox-o > input + label:before {
@@ -2912,7 +2910,7 @@ button {
 }
 .interest-check input {
   position: absolute !important;
-  transform: translateX(-150524px);
+  transform: translateX(150524px);
 }
 .interest-check input:checked ~ .fa {
   display: block !important;
@@ -2970,7 +2968,7 @@ input[type=range]::-webkit-slider-thumb:after {
   height: 10px;
   position: absolute;
   z-index: 1;
-  right: 20px;
+  left: 20px;
   top: 5px;
   background: #ff5b32;
   background: linear-gradient(to right, #f088fc 1%, #AC6CFF 70%);
@@ -3047,7 +3045,7 @@ code {
 .stepper input {
   height: 33px;
   width: 33px;
-  float: left;
+  float: right;
   border: none !important;
   text-align: center;
   display: block;
@@ -3071,12 +3069,12 @@ code {
   font-size: 9px;
 }
 .stepper a:first-child {
-  float: left;
-  border-right: solid 1px rgba(0, 0, 0, 0.1);
-}
-.stepper a:last-child {
   float: right;
   border-left: solid 1px rgba(0, 0, 0, 0.1);
+}
+.stepper a:last-child {
+  float: left;
+  border-right: solid 1px rgba(0, 0, 0, 0.1);
 }
 
 .btn, input, select {
@@ -3138,7 +3136,7 @@ button:active {
 
 .input-style label {
   opacity: 0;
-  left: 0px !important;
+  right: 0px !important;
   transform: translateX(30px);
   position: absolute;
   top: -12px;
@@ -3165,7 +3163,7 @@ button:active {
   position: absolute;
   top: 50%;
   width: 10px;
-  padding-left: 15px !important;
+  padding-right: 15px !important;
   text-align: center;
   margin-top: -7px;
 }
@@ -3173,13 +3171,13 @@ button:active {
 .input-style.has-icon.has-borders input,
 .input-style.has-icon.has-borders select,
 .input-style.has-icon.has-borders textarea {
-  padding-left: 35px !important;
+  padding-right: 35px !important;
 }
 
 .input-style.has-icon input,
 .input-style.has-icon select,
 .input-style.has-icon textarea {
-  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .input-style input[type=date]::-webkit-calendar-picker-indicator {
@@ -3212,7 +3210,7 @@ button:active {
   position: absolute;
   top: 50%;
   margin-top: -5px;
-  right: 5px;
+  left: 5px;
   pointer-events: none;
 }
 
@@ -3231,8 +3229,8 @@ button:active {
   border-left-width: 1px !important;
   border-right-width: 1px !important;
   border-top-width: 1px !important;
-  padding-left: 13px !important;
-  padding-right: 10px !important;
+  padding-left: 10px !important;
+  padding-right: 13px !important;
   border-radius: 10px !important;
 }
 
@@ -3240,12 +3238,12 @@ button:active {
 .input-style.has-borders .invalid,
 .input-style.has-borders span,
 .input-style.has-borders em {
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .input-style.input-style-active label {
-  left: 4px !important;
-  transform: translateX(-14px) !important;
+  right: 4px !important;
+  transform: translateX(14px) !important;
   position: absolute;
   padding: 0px 8px !important;
   height: 23px;
@@ -3255,7 +3253,7 @@ button:active {
 }
 
 .input-style.has-borders.input-style-active label {
-  margin-left: 14px !important;
+  margin-right: 14px !important;
 }
 
 .input-style textarea:focus {
@@ -3265,9 +3263,9 @@ button:active {
 
 .input-style.no-borders.input-style-always-active label {
   opacity: 1;
-  left: 6px !important;
-  transform: translateX(-14px) !important;
-  margin-left: 0px !important;
+  right: 6px !important;
+  transform: translateX(14px) !important;
+  margin-right: 0px !important;
   position: absolute;
   padding: 0px 8px !important;
   height: 23px;
@@ -3278,9 +3276,9 @@ button:active {
 
 .input-style.has-borders.input-style-always-active label {
   opacity: 1;
-  left: 23px !important;
+  right: 0px !important;
   transform: translateX(-14px) !important;
-  margin-left: 0px !important;
+  margin-right: 0px !important;
   position: absolute;
   padding: 0px 5px !important;
   height: 23px;
@@ -3424,7 +3422,7 @@ input[type=number] {
 }
 .list-custom-small .badge {
   position: absolute;
-  right: 15px;
+  left: 15px;
   margin-top: 16px !important;
   font-size: 9px;
   padding: 5px 8px 5px 8px;
@@ -3437,17 +3435,17 @@ input[type=number] {
   border-bottom: solid 1px rgba(0, 0, 0, 0.05);
 }
 .list-custom-small a i:first-child {
-  margin-left: 0px;
+  margin-right: 0px;
   width: 30px;
   height: 30px;
   line-height: 30px;
   margin-top: 10px;
   text-align: center;
-  float: left;
-  margin-right: 10px;
+  float: right;
+  margin-left: 10px;
 }
 .list-custom-small a i:last-child {
-  float: right;
+  float: left;
   font-size: 10px;
   opacity: 0.5;
 }
@@ -3457,7 +3455,7 @@ input[type=number] {
 .list-custom-small .custom-control {
   z-index: 10;
   position: absolute;
-  right: 40px;
+  left: 40px;
   margin-top: -38px !important;
 }
 .list-custom-small .custom-control input {
@@ -3465,7 +3463,7 @@ input[type=number] {
 }
 
 .menu .list-custom-small a i:first-child {
-  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .list-custom-large a {
@@ -3494,16 +3492,16 @@ input[type=number] {
   line-height: 32px;
   margin-top: 21px;
   text-align: center;
-  float: left;
-  margin-right: 15px;
+  float: right;
+  margin-left: 15px;
 }
 .list-custom-large a i:last-child {
-  float: right;
+  float: left;
   font-size: 10px;
 }
 .list-custom-large .badge {
   position: absolute;
-  right: 10px;
+  left: 10px;
   margin-top: 30px;
   font-size: 9px;
   padding: 5px 8px 5px 8px;
@@ -3515,7 +3513,7 @@ input[type=number] {
 .list-custom-large .custom-control {
   z-index: 10;
   position: absolute;
-  right: 40px;
+  left: 40px;
   margin-top: 22px;
 }
 .list-custom-large .custom-control input {
@@ -3531,13 +3529,13 @@ input[type=number] {
   border-bottom: solid 1px rgba(0, 0, 0, 0.05);
 }
 .list-boxes a span:not(.badge) {
-  padding-left: 10px;
+  padding-right: 10px;
   font-size: 14px;
   position: absolute;
   margin-top: -4px;
 }
 .list-boxes a strong {
-  padding-left: 10px;
+  padding-right: 10px;
   font-size: 7px;
   position: absolute;
   font-size: 11px;
@@ -3547,19 +3545,19 @@ input[type=number] {
 }
 .list-boxes a i:first-child {
   width: 40px;
-  float: left;
-  padding-left: 15px;
+  float: right;
+  padding-right: 15px;
 }
 .list-boxes a i:last-child {
-  float: right;
+  float: left;
   font-size: 16px;
   margin-top: -5px;
-  margin-right: 15px;
+  margin-left: 15px;
 }
 .list-boxes a u {
   position: absolute;
-  right: 0px;
-  margin-right: 9px;
+  left: 0px;
+  margin-left: 9px;
   width: 60px;
   font-size: 7px;
   text-align: center;
@@ -3568,7 +3566,7 @@ input[type=number] {
 }
 .list-boxes .badge {
   position: absolute;
-  right: 10px;
+  left: 10px;
   margin-top: 30px;
   font-size: 9px;
   padding: 5px 8px 5px 8px;
@@ -3579,10 +3577,10 @@ input[type=number] {
 }
 
 .short-border {
-  margin-left: 45px;
+  margin-right: 45px;
 }
 .short-border i:first-child {
-  margin-left: -45px;
+  margin-right: -45px;
   margin-top: 23px;
 }
 
@@ -3591,25 +3589,25 @@ input[type=number] {
 }
 
 .list-icon-0 a i:first-child {
-  margin-left: -3px !important;
+  margin-right: -3px !important;
 }
 
 .icon-list {
-  margin-left: 0px;
-  padding-left: 0px;
+  margin-right: 0px;
+  padding-right: 0px;
 }
 .icon-list li {
   list-style: none;
 }
 .icon-list li i {
-  padding-right: 10px;
+  padding-left: 10px;
 }
 
 /*Badge Text in Lists*/
 .badge-text {
   margin-top: 13px !important;
   transform: translateY(-3px);
-  padding-right: 20px !important;
+  padding-left: 20px !important;
 }
 
 /*List Groups*/
@@ -3621,7 +3619,7 @@ input[type=number] {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  right: 13px;
+  left: 13px;
   font-size: 16px;
   margin-top: 0.5px;
   content: "\f058";
@@ -3760,7 +3758,7 @@ input[type=number] {
 }
 .pricing-3 .pricing-title {
   font-size: 28px;
-  padding: 30px 0px 0px 20px;
+  padding: 30px 20px 0px 0px;
 }
 .pricing-3 .pricing-value {
   text-align: center;
@@ -3782,7 +3780,7 @@ input[type=number] {
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
-  padding: 0px 0px 30px 20px;
+  padding: 0px 20px 30px 0px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.1);
 }
 .pricing-3 .pricing-list {
@@ -3790,6 +3788,7 @@ input[type=number] {
 }
 .pricing-3 .pricing-list i {
   padding-right: 20px;
+  padding-left: 20px;
   width: 30px;
 }
 .pricing-3 .pricing-list li {
@@ -3976,18 +3975,18 @@ input[type=number] {
   outline: none !important;
   width: 100%;
   background-color: rgba(0, 0, 0, 0);
-  padding-left: 40px;
+  padding-right: 40px;
   line-height: 45px;
 }
 .search-box .fa-search {
   position: absolute;
-  left: 0px;
+  right: 0px;
   line-height: 52px;
   padding: 0px 15px 0px 15px;
 }
 .search-box a {
   position: absolute;
-  right: 15px;
+  left: 15px;
   font-size: 14px;
   line-height: 52px;
   width: 45px;
@@ -4011,7 +4010,7 @@ input[type=number] {
 }
 
 .search-icon-list {
-  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 10px;
 }
 .search-icon-list a {
@@ -4019,7 +4018,7 @@ input[type=number] {
   line-height: 35px;
 }
 .search-icon-list a i {
-  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .search-page .search-result-list {
@@ -4035,18 +4034,18 @@ input[type=number] {
 .search-page .search-results h1 {
   font-size: 15px;
   font-weight: 600;
-  padding-left: 100px;
+  padding-right: 100px;
   margin-bottom: 0px;
 }
 .search-page .search-results p {
   font-size: 12px;
   line-height: 20px;
-  padding-left: 100px;
-  padding-right: 80px;
+  padding-right: 100px;
+  padding-left: 80px;
 }
 .search-page .search-results a {
   position: absolute;
-  right: 0px;
+  left: 0px;
   height: 30px;
   line-height: 31px;
   padding: 0px 12px;
@@ -4069,7 +4068,7 @@ input[type=number] {
   background-color: #FFF;
   width: 100%;
   text-align: center;
-  border-right: solid 0px !important;
+  border-left: solid 0px !important;
   border: solid 1px rgba(0, 0, 0, 0.07);
   align-self: center;
   margin: 0 auto;
@@ -4091,13 +4090,13 @@ input[type=number] {
 }
 
 .tabs-rounded a:first-child {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .tabs-rounded a:last-child {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .theme-dark .tab-controls a {
@@ -4363,7 +4362,7 @@ input[type=number] {
 }
 
 .visible-slider {
-  padding-right: 60px !important;
+  padding-left: 60px !important;
 }
 
 /*PageApp Calendar*/
@@ -4391,14 +4390,6 @@ input[type=number] {
 }
 
 .cal-title-right {
-  float: right;
-  margin-top: -60px;
-  line-height: 62px;
-  height: 50px;
-  padding-right: 20px;
-}
-
-.cal-title-left {
   float: left;
   margin-top: -60px;
   line-height: 62px;
@@ -4406,10 +4397,18 @@ input[type=number] {
   padding-left: 20px;
 }
 
+.cal-title-left {
+  float: right;
+  margin-top: -60px;
+  line-height: 62px;
+  height: 50px;
+  padding-right: 20px;
+}
+
 .cal-days a {
   position: relative;
   width: 14.28%;
-  float: left;
+  float: right;
   text-align: center;
   height: 35px;
   line-height: 35px;
@@ -4446,7 +4445,7 @@ input[type=number] {
 .cal-dates a {
   position: relative;
   width: 14.2857142857%;
-  float: left;
+  float: right;
   text-align: center;
   line-height: 45px;
   color: #1f1f1f;
@@ -4463,7 +4462,7 @@ input[type=number] {
 
 .cal-dates-border a {
   overflow: hidden;
-  border-right: solid 1px rgba(0, 0, 0, 0.05);
+  border-left: solid 1px rgba(0, 0, 0, 0.05);
   border-bottom: solid 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -4473,7 +4472,7 @@ input[type=number] {
 }
 .cal-schedule em {
   line-height: 20px;
-  padding: 20px 0px 0px 20px;
+  padding: 20px 20px 0px 0px;
   position: absolute;
   font-size: 11px;
   font-style: normal;
@@ -4481,7 +4480,7 @@ input[type=number] {
 .cal-schedule strong {
   color: #000;
   display: block;
-  padding: 17px 0px 0px 100px;
+  padding: 17px 100px 0px 0px;
   font-size: 14px;
 }
 .cal-schedule span {
@@ -4494,7 +4493,7 @@ input[type=number] {
   width: 50px;
   display: inline-block;
   text-align: center;
-  padding: 0px 20px 0px 102px;
+  padding: 0px 102px 0px 10px;
 }
 
 .theme-dark .cal-schedule strong {
@@ -4514,14 +4513,14 @@ input[type=number] {
   height: 40px;
   line-height: 43px;
   font-size: 27px;
-  right: 20px;
+  left: 20px;
 }
 .cal-message strong {
   display: block;
   line-height: 20px;
   font-weight: 400;
   font-size: 11px;
-  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /*-Pageapp Chat-*/
@@ -4626,7 +4625,7 @@ input[type=number] {
 /*Contact Form*/
 .form-field span {
   position: absolute;
-  right: 20px;
+  left: 20px;
   font-size: 9px;
   opacity: 0.5;
 }
@@ -6569,7 +6568,7 @@ input[type=number] {
 .demo-color {
   width: 100%;
   line-height: 45px;
-  padding-left: 20px;
+  padding-right: 20px;
   text-transform: capitalize;
   border-bottom: solid 1px rgba(255, 255, 255, 0.05);
 }
@@ -6577,7 +6576,7 @@ input[type=number] {
 .demo-color span {
   font-size: 10px;
   position: absolute;
-  right: 20px;
+  left: 20px;
   line-height: 48px;
   color: rgba(255, 255, 255, 0.5);
 }

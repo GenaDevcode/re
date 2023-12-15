@@ -2,23 +2,24 @@
 setTimeout(function(){
     var preloader = document.getElementById('preloader')
     if(preloader){preloader.classList.add('preloader-hide');}
-},150);
+},200);
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict'
+
 
     //Global Variables
     let isPWA = true;  // Enables or disables the service worker and PWA
     let isAJAX = true; // AJAX transitions. Requires local server or server
     var pwaName = "Sticky"; //Local Storage Names for PWA
     var pwaRemind = 1; //Days to re-remind to add to home
-    var pwaNoCache = false; //Requires server and HTTPS/SSL. Will clear cache with each visit
+    var pwaNoCache = false; //Requires server and HTTP. Will clear cache with each visit
 
     //Setting Service Worker Locations scope = folder | location = service worker js location
     var pwaScope = "/";
     var pwaLocation = "/_service-worker.js";
 
-    //Place all your custom Javascript functions and plugin calls below this line
+
     function init_template(){
         //Caching Global Variables
         var i, e, el; //https://www.w3schools.com/js/js_performance.asp
@@ -120,16 +121,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-
         //Image Sliders
         var splide = document.getElementsByClassName('splide');
         if(splide.length){
+
+
             var singleSlider = document.querySelectorAll('.single-slider');
             if(singleSlider.length){
                 singleSlider.forEach(function(e){
                     var single = new Splide( '#'+e.id, {
                         type:'loop',
                         autoplay:true,
+                        direction: 'rtl',
                         interval:4000,
                         perPage: 1,
                     }).mount();
@@ -146,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
                      var double = new Splide( '#'+e.id, {
                         type:'loop',
                         autoplay:true,
+                        direction: 'rtl',
                         interval:4000,
                         arrows:false,
                         perPage: 2,
@@ -159,9 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
                      var tripple = new Splide( '#'+e.id, {
                         type:'loop',
                         autoplay:true,
+                        direction: 'rtl',
                         padding: {
-                            left   :'0px',
-                            right: '80px',
+                            right   :'0px',
+                            left: '80px',
                         },
                         interval:4000,
                         arrows:false,
@@ -195,7 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
                document.getElementsByClassName('hide-map')[0].classList.add('disabled');
             })
         }
-
 
 
 
@@ -271,14 +275,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }));
 
             //Closing Menus
-            const menuClose = document.querySelectorAll('.close-menu, .menu-hider');
-            menuClose.forEach(el => el.addEventListener('click',e =>{
-                const activeMenu = document.querySelectorAll('.menu-active');
-                for(let i=0; i < activeMenu.length; i++){activeMenu[i].classList.remove('menu-active');}
-                for(let i=0; i < wrappers.length; i++){wrappers[i].style.transform = "translateX(-"+0+"px)"}
+			const menuClose = document.querySelectorAll('.close-menu, .menu-hider');
+			menuClose.forEach(el => el.addEventListener('click',e =>{
+				const activeMenu = document.querySelectorAll('.menu-active');
+				for(let i=0; i < activeMenu.length; i++){activeMenu[i].classList.remove('menu-active');}
+				for(let i=0; i < wrappers.length; i++){wrappers[i].style.transform = "translateX(-"+0+"px)"}
 				var iframes = document.querySelectorAll('iframe');
 				iframes.forEach(el => {var hrefer = el.getAttribute('src'); el.setAttribute('newSrc', hrefer); el.setAttribute('src',''); var newSrc = el.getAttribute('newSrc');el.setAttribute('src', newSrc)});
-            }));
+			}));
         }
 
 
@@ -503,10 +507,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     var mapL5 = ''
                     var mapLinkEmbed = mapL1 + mapL2 + mapL3 + mapL4;
                     var mapLinkAddress = mapL1 + mapL2 + mapL3 + mapL5;
-                    var mapLinkNewAPI = 'https://www.google.com/maps/@' + latitude + ','+ longitude + ',15z'
-					document.getElementsByClassName('location-map')[0].setAttribute('src',mapLinkEmbed);
-					document.getElementsByClassName('location-button')[0].setAttribute('href',mapLinkNewAPI);
-					document.getElementsByClassName('location-button')[0].classList.remove('disabled');
+					var mapLinkNewAPI = 'https://www.google.com/maps/@' + latitude + ','+ longitude + ',15z'
+                    document.getElementsByClassName('location-map')[0].setAttribute('src',mapLinkEmbed);
+                    document.getElementsByClassName('location-button')[0].setAttribute('href',mapLinkNewAPI);
+                    document.getElementsByClassName('location-button')[0].classList.remove('disabled');
                 }
                 function error() {locationCoordinates.textContent = 'Unable to retrieve your location';}
                 if (!navigator.geolocation) {locationCoordinates.textContent = 'Geolocation is not supported by your browser';}
@@ -845,12 +849,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         //Search Page
-        var searchField = document.querySelectorAll('[data-search]');
-        if(searchField.length){
-            var searchResults = document.querySelectorAll('.search-results')
-            var searchNoResults = document.querySelectorAll('.search-no-results');
-            var searchTotal = document.querySelectorAll(".search-results div")[0].childElementCount;
-            var searchTrending = document.querySelectorAll('.search-trending');
+		var searchField = document.querySelectorAll('[data-search]');
+		if(searchField.length){
+			var searchResults = document.querySelectorAll('.search-results')
+			var searchNoResults = document.querySelectorAll('.search-no-results');
+			var searchTotal = document.querySelectorAll(".search-results div")[0].childElementCount;
+			var searchTrending = document.querySelectorAll('.search-trending');
 			var clearSearch = document.querySelectorAll('.clear-search')[0];
 			clearSearch.addEventListener('click',function(){
 				searchField[0].value = "";
@@ -861,50 +865,50 @@ document.addEventListener('DOMContentLoaded', () => {
 				var searchFilterItem = document.querySelectorAll('[data-filter-item]');
 				for (let i = 0; i < searchFilterItem.length; i++) {searchFilterItem[i].classList.add('disabled');}
 			})
-            function searchFunction(){
-                var searchStr = searchField[0].value;
+			function searchFunction(){
+				var searchStr = searchField[0].value;
 				var searchVal = searchStr.toLowerCase();
-                if (searchVal != '') {
+				if (searchVal != '') {
 					clearSearch.classList.remove('disabled');
-                    searchResults[0].classList.remove('disabled-search-list');
-                    var searchFilterItem = document.querySelectorAll('[data-filter-item]');
-                    for (let i = 0; i < searchFilterItem.length; i++) {
-                        var searchData = searchFilterItem[i].getAttribute('data-filter-name');
-                        if(searchData.includes(searchVal)){
-                            searchFilterItem[i].classList.remove('disabled');
-                            if(searchTrending.length){searchTrending[0].classList.add('disabled');}
-                        } else {
-                            searchFilterItem[i].classList.add('disabled');
-                            if(searchTrending.length){searchTrending[0].classList.remove('disabled');}
-                        }
-                        var disabledResults = document.querySelectorAll(".search-results div")[0].getElementsByClassName("disabled").length;
-                        if(disabledResults === searchTotal){
-                            searchNoResults[0].classList.remove('disabled');
-                            if(searchTrending.length){searchTrending[0].classList.add('disabled');}
-                        } else {
-                            searchNoResults[0].classList.add('disabled');
-                            if(searchTrending.length){searchTrending[0].classList.add('disabled');}
-                        }
-                    }
-                }
-                if (searchVal === '') {
+					searchResults[0].classList.remove('disabled-search-list');
+					var searchFilterItem = document.querySelectorAll('[data-filter-item]');
+					for (let i = 0; i < searchFilterItem.length; i++) {
+						var searchData = searchFilterItem[i].getAttribute('data-filter-name');
+						if(searchData.includes(searchVal)){
+							searchFilterItem[i].classList.remove('disabled');
+							if(searchTrending.length){searchTrending[0].classList.add('disabled');}
+						} else {
+							searchFilterItem[i].classList.add('disabled');
+							if(searchTrending.length){searchTrending[0].classList.remove('disabled');}
+						}
+						var disabledResults = document.querySelectorAll(".search-results div")[0].getElementsByClassName("disabled").length;
+						if(disabledResults === searchTotal){
+							searchNoResults[0].classList.remove('disabled');
+							if(searchTrending.length){searchTrending[0].classList.add('disabled');}
+						} else {
+							searchNoResults[0].classList.add('disabled');
+							if(searchTrending.length){searchTrending[0].classList.add('disabled');}
+						}
+					}
+				}
+				if (searchVal === '') {
 					clearSearch.classList.add('disabled');
-                    searchResults[0].classList.add('disabled-search-list');
-                    searchNoResults[0].classList.add('disabled');
-                    if(searchTrending.length){searchTrending[0].classList.remove('disabled');}
-                }
-            };
+					searchResults[0].classList.add('disabled-search-list');
+					searchNoResults[0].classList.add('disabled');
+					if(searchTrending.length){searchTrending[0].classList.remove('disabled');}
+				}
+			};
 
-            searchField[0].addEventListener('keyup', function() {searchFunction();})
-            searchField[0].addEventListener('click', function() {searchFunction();})
+			searchField[0].addEventListener('keyup', function() {searchFunction();})
+			searchField[0].addEventListener('click', function() {searchFunction();})
 
-            var searchClick = document.querySelectorAll('.search-trending a');
-            searchClick.forEach(el => el.addEventListener('click', event => {
-                var trendingResult = el.querySelectorAll('span')[0].textContent.toLowerCase();
-                searchField[0].value  = trendingResult;
-                searchField[0].click();
-            }));
-        }
+			var searchClick = document.querySelectorAll('.search-trending a');
+			searchClick.forEach(el => el.addEventListener('click', event => {
+				var trendingResult = el.querySelectorAll('span')[0].textContent.toLowerCase();
+				searchField[0].value  = trendingResult;
+				searchField[0].click();
+			}));
+		}
 
         //Search Header
         var searchHeader = document.querySelectorAll('[data-toggle-search]');
@@ -1120,12 +1124,12 @@ document.addEventListener('DOMContentLoaded', () => {
         //Online / Offline Settings
         //Activating and Deactivating Links Based on Online / Offline State
         function offlinePage(){
-			//Enable the code below to disable offline mode
-            //var anchorsDisabled = document.querySelectorAll('a');
-            //anchorsDisabled.forEach(function(e){
-            //    var hrefs = e.getAttribute('href');
-            //    if(hrefs.match(/.html/)){e.classList.add('show-offline'); e.setAttribute('data-link',hrefs); e.setAttribute('href','#');}
-            //});
+        	//Enable the code below to disable offline mode
+			//var anchorsDisabled = document.querySelectorAll('a');
+			//anchorsDisabled.forEach(function(e){
+			//    var hrefs = e.getAttribute('href');
+			//    if(hrefs.match(/.html/)){e.classList.add('show-offline'); e.setAttribute('data-link',hrefs); e.setAttribute('href','#');}
+			//});
             var showOffline = document.querySelectorAll('.show-offline');
             showOffline.forEach(el => el.addEventListener('click', event => {
                 document.getElementsByClassName('offline-message')[0].classList.add('offline-message-active');
@@ -1231,10 +1235,10 @@ document.addEventListener('DOMContentLoaded', () => {
             var checkPWA = document.getElementsByTagName('html')[0];
             if(!checkPWA.classList.contains('isPWA')){
                 if ('serviceWorker' in navigator) {
-                  window.addEventListener('load', function() {
-                    navigator.serviceWorker.register(pwaLocation, {scope: pwaScope}).then(function(registration){registration.update();})
-                  });
-                }
+					window.addEventListener('load', function() {
+						navigator.serviceWorker.register(pwaLocation, {scope: pwaScope}).then(function(registration){registration.update();})
+					});
+				}
 
                 //Setting Timeout Before Prompt Shows Again if Dismissed
                 var hours = pwaRemind * 24; // Reset when storage is more than 24hours
@@ -1333,22 +1337,12 @@ document.addEventListener('DOMContentLoaded', () => {
         //Lazy Loading
         var lazyLoad = new LazyLoad();
 
-        // Check Documentation folder for detailed explanations on
-        // Externally loading Javascript files for better performance.
-
         var plugIdent, plugClass, plugMain, plugCall;
         var plugLoc = "plugins/"
 
         let plugins = [
           {
-            id: 'uniqueID', // to detect if loaded and unload if needed
-            plug: 'pluginName/plugin.js', // the main plugin javascript file
-            call: 'pluginName/pluginName-call.js', // the plugin call functions
-            style: 'pluginName/pluginName-style.css', // the plugin stylesheet
-            trigger: '.pluginTriggerClass' // the trigger that will activate the loading and initializing of the plugin
-          },
-          {
-            id: 'charts-js-plugin',
+            id: 'chart-js-plugin',
             plug: 'charts/charts.js',
             call: 'charts/charts-call-graphs.js',
             trigger: '.graph'
@@ -1367,7 +1361,7 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           {
             id: 'gallery-views',
-            call: 'galleryViews/gallery-views.js',
+            plug: 'galleryViews/gallery-views.js',
             trigger: '.gallery-view-controls'
           },
           {
